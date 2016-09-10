@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="angApp">
+	<head>
+		<title>Hello Angular</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	</head>
+	<body>
+		<label>Name: <input type="text" ng-model="yourName" /></label>
+		<p>Hello, {{yourName}}.</p>
+		<div ng-controller="SampleController">
+			<p>Check out this {{sample.text}}</p>
+		</div>
+
+		<script>
+angular.module("angApp", [])
+	.controller("SampleController", function($scope) {
+		$scope.sample = {};
+		$scope.sample.text = 'scoped text!';
+	});
+		</script>
+	</body>
+</html>
