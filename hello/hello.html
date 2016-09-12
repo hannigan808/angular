@@ -9,6 +9,7 @@
 		<p>Hello, {{yourName}}.</p>
 		<div ng-controller="SampleController">
 			<p>Check out this {{sample.text}}</p>
+			<p>I feel like {{sample.value | currency}}</p>
 		</div>
 
 		<script>
@@ -16,6 +17,7 @@ angular.module("angApp", [])
 	.controller("SampleController", function($scope) {
 		$scope.sample = {};
 		$scope.sample.text = 'scoped text!';
+		$scope.sample.value = 1000000;
 	});
 		</script>
 	</body>
