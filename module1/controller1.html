@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Simple Controller and Expressions</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+		<script src="mainApp.js"></script>
+		<script src="simpleController.js"></script>
+	</head>
+	<body>
+		<div ng-app="mainApp" ng-controller="simpleController">
+			<h2>Characters:</h2>
+			<ul>
+				<li ng-repeat="person in people">
+					Name: {{person.firstName + ' ' + person.lastName}}, Status: {{person.status}}
+				</li>
+			</ul>
+
+			<p><label><input type="checkbox" ng-model="showHideForm"/> Toggle Form</label></p>
+
+			<form name="charForm" ng-hide="showHideForm">
+				<h2>Add New Character</h2>
+				<label>First Name: <input name="firstName" ng-model="fname" type="text" required/></label>
+				<span style="color: red" ng-show="charForm.firstName.$dirty && charForm.firstName.$invalid">
+					<span ng-show="charForm.firstName.required">First name is required</span>
+				</span>
+				<label>Last Name: <input name="lastName" ng-model="lname" type="text" required/></label>
+				<label>Status: 
+					<select name="status" ng-model="status">
+						<option ng-repeat="status in statuses" value="{{status.value}}">{{status.label}}</option>
+					</select>
+				</label>
+				<button ng-click="addChar()">Add</button>
+			</form>
+		</div>
+
+	</body>
+</html>
