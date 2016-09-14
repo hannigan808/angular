@@ -5,9 +5,11 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
 		<script src="mainApp.js"></script>
 		<script src="simpleController.js"></script>
+		<script src="customComponent.js"></script>
 	</head>
 	<body>
 		<div ng-app="mainApp" ng-controller="simpleController">
+			<h1><custom-component/></h1>
 			<h2>Characters:</h2>
 			<ul>
 				<li ng-repeat="person in people">

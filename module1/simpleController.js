@@ -17,3 +17,4 @@ mainApp.controller("simpleController", function($scope) {
 		$scope.fname = $scope.lname = $scope.status = 'Unknown';
 	}
 });
+
